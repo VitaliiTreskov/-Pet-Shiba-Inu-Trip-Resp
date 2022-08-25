@@ -4,6 +4,32 @@ body {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px 15px;
+}
+
+@media (max-width: 1200px) {
+    .wrapper {
+        max-width: 970px;
+    }
+}
+
+@media (max-width: 992px) {		
+	.wrapper {	
+	max-width: 750px;	
+	}	
+}		
+
+@media (max-width: 767px) {	
+	.wrapper {
+	max-width: none;
+	}
+}	
+
+
+
 //header styles
 .header {
     display: flex;
