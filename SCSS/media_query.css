@@ -32,17 +32,11 @@
   .tabheader {
     max-width: 250px;
   }
-  .tabcontainer__descr {
-    display: none;
-  }
   .image-row__descr_left {
     display: none;
   }
   .image-row__descr_right {
     display: none;
-  }
-  .slider__slide {
-    max-width: 400px;
   }
 }
 @media (max-width: 992px) {
@@ -51,6 +45,9 @@
   }
   .container {
     max-width: 750px;
+  }
+  .header .menu__link {
+    font-size: 16px;
   }
   body .top-block__title {
     font-size: 28px;
@@ -72,14 +69,17 @@
   body .preview .container .tabcontainer .tabheader__items .tabheader__item {
     font-size: 16px;
   }
-  .image-row__descr_left {
-    display: none;
+  .preview .container .tabcontainer__descr {
+    top: 300px;
+    right: -150px;
+    width: 280px;
+    height: 100px;
+    padding: 25px 15px 25px 15px;
+    font-size: 18px;
+    line-height: 25px;
   }
   .on-our-way-row__text-block {
     margin-top: 15px;
-  }
-  .slider__slide {
-    max-width: 300px;
   }
 }
 @media (max-width: 767px) {
@@ -90,6 +90,83 @@
   .container {
     max-width: 720px;
     margin: 0 auto;
+  }
+  .menu__icon {
+    z-index: 5;
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+  }
+  .menu__icon span,
+.menu__icon::before,
+.menu__icon::after {
+    left: 0;
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    transition: all 0.3s ease 0s;
+    background-color: #fff;
+  }
+  .menu__icon::before,
+.menu__icon::after {
+    content: "";
+  }
+  .menu__icon::before {
+    top: 0;
+  }
+  .menu__icon::after {
+    bottom: 0;
+  }
+  .menu__icon span {
+    top: 50%;
+    transform: scale(1) translate(0px, -50%);
+  }
+  .menu__icon._active span {
+    transform: scale(0) translate(0px, -50%);
+  }
+  .menu__icon._active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0px, -50%);
+  }
+  .menu__icon._active::after {
+    top: 50%;
+    transform: rotate(45deg) translate(0px, 50%);
+  }
+  .menu__body {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 15, 15, 0.9);
+    padding: 100px 30px 30px 30px;
+    transition: left 0.3s ease 0s;
+    overflow: auto;
+  }
+  .menu__body._active {
+    left: 0;
+  }
+  .menu__body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 70px;
+    background-color: rgb(150, 80, 15);
+    z-index: 2;
+  }
+  .menu__list a {
+    margin: 0px 0px 30px 0px;
+    color: #fff;
+  }
+  .menu__list li:last-child {
+    margin-bottom: 0px;
+  }
+  .menu__link {
+    font-size: 24px;
   }
   body .top-block__title {
     font-size: 24px;
@@ -114,14 +191,67 @@
   body .preview .container .tabcontainer .tabheader__items .tabheader__item {
     font-size: 12px;
   }
-  .slider__slide {
-    max-width: 200px;
+  .preview .container .tabcontainer__descr {
+    top: 300px;
+    right: -100px;
+    width: 280px;
+    height: 100px;
+    padding: 25px 15px 25px 15px;
+    font-size: 18px;
+    line-height: 25px;
+  }
+  body .on-our-way-row {
+    flex-direction: column;
+  }
+  body .on-our-way-row .slider {
+    margin: 20px 15px;
+    align-items: center;
+  }
+  body .on-our-way-row .slider__counter {
+    font-size: 20px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  body .on-our-way-row .slider__counter-prev {
+    font-size: 20px;
+  }
+  body .on-our-way-row .slider #current {
+    font-size: 24px;
+  }
+  body .on-our-way-row .slider__counter-next {
+    font-size: 20px;
   }
   .footer h3 {
     font-size: 14px;
   }
   .footer .follow p {
     font-size: 14px;
+  }
+}
+@media (min-width: 767px) {
+  .menu__list {
+    display: flex;
+    align-items: center;
+  }
+  .menu__list li {
+    padding: 10px 0px;
+  }
+}
+@media (max-width: 650px) {
+  .preview .container .tabcontainer__descr {
+    top: 250px;
+    right: -100px;
+    width: 280px;
+    height: 100px;
+    padding: 25px 15px 25px 15px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+@media (max-width: 650px) {
+  .preview .container .tabcontainer__descr {
+    display: none;
   }
 }
 @media (max-width: 480px) {
@@ -165,13 +295,13 @@
     width: fit-content;
   }
   body .on-our-way-row .slider__counter-prev {
-    font-size: 24px;
+    font-size: 18px;
   }
   body .on-our-way-row .slider #current {
-    font-size: 30px;
+    font-size: 24px;
   }
   body .on-our-way-row .slider__counter-next {
-    font-size: 24px;
+    font-size: 18px;
   }
   .footer h3 {
     font-size: 12px;

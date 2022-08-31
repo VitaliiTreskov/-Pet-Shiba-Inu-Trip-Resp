@@ -13,26 +13,42 @@
 <body>
     <div class="wrapper">
         <header class="header">
-            <div class="header__left-block">
-                <div class="header__logo">
-                    <img src="./icons/ShibaLogo.png" alt="logo">
-                </div>
-                <nav class="header__links">
-                    <a href="#about-my-self" class="header__link">About myself</a>
-                    <a href="#before-the-journey" class="header__link">Before the journey</a>
-                    <a href="#on-our-way" class="header__link">On our way</a>
-                    <a href="#finally-arrived" class="header__link">Finally arrived</a>
-                </nav>
+            <div class="header__container">
+                <!-- <div class="header__left-block"> -->
+                    <div class="header__logo">
+                        <img src="./icons/ShibaLogo.png" alt="logo">
+                    </div>
+                    <div class="header__menu menu">
+                        <div class="menu__icon">
+                            <span></span>
+                        </div>
+                        <nav class="menu__body">
+                            <ul class="menu__list">
+                                <li><a data-goto=".about-my-self" href="#" class="menu__link">About myself</a></li>
+                                <li><a data-goto=".before-the-journey" href="#" class="menu__link">Before the journey</a></li>
+                                <li><a data-goto=".on-our-way" href="#" class="menu__link">On our way</a></li>
+                                <li><a data-goto=".finally-arrived" href="#" class="menu__link">Finally arrived</a></li>
+                                <li><a href="#" data-modal class="menu__link">Contact me</a></li>
+                                <!-- <button class="btn">Contact me</button> -->
+                            </ul>
+                            <!-- <div class="header__right-block">
+                                
+                            </div> -->
+                            <!-- <a href="#about-my-self" class="header__link">About myself</a>
+                            <a href="#before-the-journey" class="header__link">Before the journey</a>
+                            <a href="#on-our-way" class="header__link">On our way</a>
+                            <a href="#finally-arrived" class="header__link">Finally arrived</a> -->
+                        </nav>
+                    </div>
+                <!-- </div> -->
             </div>
-            <div class="header__right-block">
-                <button class="btn">Contact me</button>
-            </div>
+            
         </header>
     </div>
 
     <!-- start of top-block -->
 
-    <section id="about-my-self">
+    <section class="page__section about-my-self">
         <div class="wrapper">
             <div class="top-block">
                 <div>
@@ -78,7 +94,7 @@
                                 Oh, boy! Do my cheeks really look like this?
                             </div>
                         </div>
-                        <!-- <div class="tabcontainer__content">
+                        <div class="tabcontainer__content">
                             <img src="./PhotoForSlider/Photo2_Rumi in the kitchen.jpg" alt="Rumi in the kitchen">
                             <div class="tabcontainer__descr">
                                 I used to sleep so peacefully. Everywhere...
@@ -101,11 +117,11 @@
                             <div class="tabcontainer__descr">
                                 Oh, it's me with Sophina... Bad photo
                             </div>
-                        </div> -->
+                        </div>
                         <div class="tabheader">
                             <h3>Take a look how fun it was!</h3>
                             <div class="tabheader__items">
-                                <div class="tabheader__item">Rest</div>
+                                <div class="tabheader__item tabheader__item_active">Rest</div>
                                 <div class="tabheader__item">Sleep</div>
                                 <div class="tabheader__item">Hunt</div>
                                 <div class="tabheader__item">Walks</div>
@@ -120,7 +136,7 @@
     <!-- end of tabs -->
 
     <!-- start of Before the journey section -->
-    <section id="before-the-journey">
+    <section class="page__section before-the-journey">
         <div class="wrapper">
             <div class="before-journey">
                 <h3 class="subtitle">Before the journey</h3>
@@ -179,7 +195,7 @@
     <!-- End of Before the journey section -->
 
     <!-- Start of On our way section -->
-    <section id="on-our-way">
+    <section class="page__section on-our-way">
         <div class="wrapper">
             <div class="container">
                 <div class="on-our-way-row">
@@ -299,7 +315,7 @@
                                         <img src="./OtherPhotos/Photo8_Family playing games in the plane.jpg"
                                             alt="Family playing games in the plane">
                                     </div>
-                                    <!-- <div class="slider__slide">
+                                    <div class="slider__slide">
                                         <img src="./OtherPhotos/Photo9_Rumy is sleeping at the hotel.jpg"
                                             alt="Rumy is sleeping at the hotel">
                                     </div>
@@ -313,7 +329,7 @@
                                     </div>
                                     <div class="slider__slide">
                                         <img src="./OtherPhotos/Photo12_Family in Argentina.jpg" alt="Family in Argentina">
-                                    </div> -->
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -326,7 +342,7 @@
     <!-- End of On our way section -->
 
     <!-- Start of Finally arrived section -->
-    <section id="finally-arrived">
+    <section class="page__section finally-arrived">
         <div class="wrapper">
             <div class="container">
                 <div class="finally-arrived-top-block">
@@ -374,6 +390,20 @@
             </div>
         </div>
     </footer>
+    <div class="modal">
+        <div class="modal__dialog">
+            <div class="modal__content">
+                <form action="#">
+                    <div data-close class="modal__close">×</div>
+                    <div class="modal__title">Ooops! I have paws... I will not answer you!</div>
+                    <input required placeholder="Your name" name="name" type="text" class="modal__input">
+                    <input required placeholder="Your phone number" name="name" type="phone" class="modal__input">
+                    <button class="btn">Call me back!</button> 
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
